@@ -1,0 +1,104 @@
+Przypadki na poziomie modułowym/jednostkowym
+
+TC.1. Sprawdzenie przestępności roku - rok przestępny
+	Dane wejściowe:
+	dla funkcji leap_year(year) wprowadzamy wartości: 4; 1944; 2000; 9996;
+	Oczekiwany rezultat: True  
+
+TC.2. Sprawdzenie przestępności roku - rok nieprzestępny
+	Dane wejściowe:
+	dla funkcji leap_year(year) wprowadzamy wartości: 1; 1945; 2003; 9999;
+	Oczekiwany rezultat: False
+
+
+
+TC.3. Sprawdzenie ilości dni w miesiącu - miesiące, które mają 31 dni
+	Dane wejściowe:
+	dla funkcji days_in_month(month, year) wprowadzamy kolejno wartości: 1 i 1; 1 i 9999; 12 i 1; 12 i 9999;
+	Oczekiwany rezultat: 31
+
+TC.4. Sprawdzenie ilości dni w miesiącu - miesiące, które mają 30 dni
+	Dane wejściowe:
+	dla funkcji days_in_month(ymonth, year) wprowadzamy kolejno wartości: 4 i 1; 4 i 9999; 11 i 1; 11 i 9999;
+	Oczekiwany rezultat: 30
+
+TC.5. Sprawdzenie ilości dni w miesiącu - luty w roku nieprzestępnym
+	Dane wejściowe:
+	dla funkcji days_in_month(month, year) wprowadzamy kolejno wartości: 2 i 1; 2 i 9999;
+	Oczekiwany rezultat: 28
+
+TC.6. Sprawdzenie ilości dni w miesiącu - luty w roku przestępnym
+	Dane wejściowe:
+	dla funkcji days_in_month(month, year) wprowadzamy kolejno wartości: 2 i 4; 2 i 9996;
+	Oczekiwany rezultat: 29
+
+
+
+TC.7. Sprawdzenie, który to dzień w roku - rok nieprzestępny
+	Dane wejściowe:
+	dla funkcji day_of_the_year(day, month, year) wprowadzamy kolejno wartości: 28 i 2 i 1; 28 i 2 i 9999;
+	Oczekiwany rezultat: 59
+
+TC.8. Sprawdzenie, który to dzień w roku - rok przestępny
+	Dane wejściowe:
+	dla funkcji day_of_the_year(day, month, year) wprowadzamy kolejno wartości: 29 i 2 i 4; 29 i 2 i 9996;
+	Oczekiwany rezultat: 60
+	
+	
+	
+TC.9. Sprawdzanie poprawności wczytywania danych - poprawne wpisanie wartości liczbowych (int)
+	Dane wejściowe:
+	dla fukcji get_int_from_user() wprowadzamy kolejno wartości: 4 i 1 i 1;
+	Oczekiwany rezultat: 
+	program wyświeli poprawne informacje: rok jest przestępny (True), ile dni ma miesiąc (31), który to dzień roku (1)
+
+TC.10. Sprawdzanie poprawności wczytywania danych - niepoprawne wpisanie wartości liczbowych (int)
+	Dane wejściowe:
+	dla fukcji get_int_from_user() wprowadzamy kolejno wartości: 10000 i 13 i 32;
+	Oczekiwany rezultat: 
+	program wyświetli komunikat oraz poprosi o wprowadzenie wartości w podanych zakresach:
+	Please enter a number from 1 and below 10000 - dla wartości 10000 (rok)
+	Please enter a number from 1 and below 13 - dla warości 13 (miesiąc)
+	Please enter a number from 1 and below 32 - dla wartości 32 (dzień)
+
+TC.11. Sprawdzanie poprawności wczytywania danych - niepoprawne wpisanie wartości liczbowych (int)
+	Dane wejściowe:
+	dla fukcji get_int_from_user() wprowadzamy kolejno wartości: 0 i 0 i 0;
+	Oczekiwany rezultat: 
+	program wyświetli komunikat oraz poprosi o wprowadzenie wartości w podanych zakresach:
+	Please enter a number from 1 and below 10000 - dla wartości 0 (rok)
+	Please enter a number from 1 and below 13 - dla warości 0 (miesiąc)
+	Please enter a number from 1 and below 32 - dla wartości 0 (dzień)
+
+TC.12. Sprawdzanie poprawności wczytywania danych - wpisanie wartości innych niż liczbowe 
+	Dane wejściowe:
+	dla fukcji get_int_from_user() wprowadzamy: magda, sto, wdcnbnk, !@#$%^&*;
+	Oczekiwany rezultat: program wyświetli komunikat oraz poprosi o wprowadzenie wartości liczbowych (Please type in a number!)
+
+
+Przypadki na poziomie systemowym (test całego programu - end to end)
+
+TC.13. Uruchomienie programu w Windows PowerShell - gdy użytkownik znajduje się w katalogu z programem
+	Dane wejściowe:
+	wprowadzenie za pomocą klawiatury komendy python homework.py
+	Oczekiwany rezultat:
+	program się uruchamia # konkretna data i printy 
+
+TC.14. Uruchomienie programu w Windows PowerShell - gdy użytkownik nie znajduje się w katalogu z programem
+	Dane wejściowe:
+	wprowadzenie za pomocą klawiatury komendy python homework.py
+	Oczekiwany rezultat:
+	komunikat o błędzie (No such file or directory)
+	
+TC.15. Uruchomienie programu po poprawnym wprowadzeniu danych 
+	Dane wejściowe: 
+	2021 i 12 i 20;
+	Oczekiwany rezultat:
+	po poprawnym wprowadzeniu wszystkich danych program "wydrukuje" informację czy rok jest przestępny, ile miesiac ma dni i który to dzień roku
+
+TC.16. Brak możliwości uruchomienia programu przy niepoprawnym wprowadzaniu danych 
+	Dane wejściowe: 
+	20210 i 120 i dwieście;
+	Oczekiwany rezultat:
+	przy niepoprawnym wprowadzaniu danych program wyświetla komunikaty o konieczności wprowadzenia warości liczbowych z podanego zakresu, aż do czasu wprowadzenia poprawnych danych 
+	
